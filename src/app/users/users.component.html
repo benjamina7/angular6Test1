@@ -1,3 +1,15 @@
-<p>
-  users works!
-</p>
+<h1>Users</h1>
+
+<ul [@listStaggerTrigger1]="users$">
+  <div *ngFor="let user of users$">
+    <li [class.leaveTest]="user.id==2">
+    <!-- <li *ngFor="let user of users$"> -->
+      <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    
+      <ul>
+        <li>{{ user.email }}</li>
+        <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+      </ul>
+    <!-- </li> -->
+    </div>
+</ul>
